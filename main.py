@@ -51,16 +51,16 @@ dataset = dataset.train_test_split(test_size=2500/12500)
 print(dataset["train"][345]["messages"])
 
 # save datasets to disk
-dataset["train"].to_json("train_dataset.json", orient="records")
-dataset["test"].to_json("test_dataset.json", orient="records")
-
-
-from datasets import load_dataset
+# dataset["train"].to_json("train_dataset.json", orient="records")
+# dataset["test"].to_json("test_dataset.json", orient="records")
 
 # Load jsonl data from disk for sql
-dataset = load_dataset("json", data_files="train_dataset.json", split="train")
-
+# dataset = load_dataset("json", data_files="train_dataset.json", split="train")
+print("###############################################")
+print("###############################################")
 print("########################### Done upto saving and loading the dataset #############################")
+print("###############################################")
+print("###############################################")
 
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
